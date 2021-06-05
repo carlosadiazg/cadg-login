@@ -1,1 +1,64 @@
-<p>register works!</p>
+<div
+  class="
+    h-100
+    p-5
+    text-white
+    bg-dark
+    rounded-3
+    animate__animated animate__fadeIn
+  "
+>
+  <h2>Registro</h2>
+
+  <form
+    class="main-container"
+    [formGroup]="registerGroup"
+    (ngSubmit)="submitForm()"
+  >
+    <div class="mb-3">
+      <label for="email" class="form-label">Correo electrónico</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        formControlName="email"
+      />
+      <div
+        class="form-text animate__animated animate__fadeIn"
+        *ngIf="
+          registerGroup.get('email').invalid &&
+          registerGroup.get('email').touched
+        "
+      >
+        El correo no es válido
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="password" class="form-label">Contraseña</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        name="password"
+        formControlName="password"
+      />
+      <div
+        class="form-text animate__animated animate__fadeIn"
+        *ngIf="
+          registerGroup.get('password').invalid &&
+          registerGroup.get('password').touched
+        "
+      >
+        La contraseña no es correcta
+      </div>
+    </div>
+    <button
+      type="submit"
+      [disabled]="registerGroup.invalid"
+      class="btn btn-outline-light"
+    >
+      Registrarse
+    </button>
+  </form>
+</div>

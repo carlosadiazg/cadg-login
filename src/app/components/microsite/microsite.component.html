@@ -1,0 +1,48 @@
+<!-- <p>microsite works! {{ token }}</p>
+<p>ready! {{ ready() }}</p>
+<p>getToken! {{ getToken() }}</p>
+
+<panel-productos-sugerido
+  titulo="Conoce los servicios más vendidos"
+  capsula="true"
+  regla="masvendidos"
+  portal="getToken()"
+  lateral="true"
+  limite="5"
+></panel-productos-sugerido>
+
+<panel-productos-sugerido
+  titulo="Servicios recomendados"
+  regla="destacados"
+  portal="gBPsYbxHaLbAb1Sj6DrM"
+  limite="5"
+></panel-productos-sugerido> -->
+<!-- <ng-container *ngIf="token; else loading">
+  {{ limite }}
+  <panel-productos-sugerido
+    titulo="Servicios recomendados"
+    regla="destacados"
+    [portal]="token"
+    limite="{{ limite }}"
+  ></panel-productos-sugerido>
+</ng-container> -->
+
+<!-- <panel-productos-sugerido
+  *ngIf="token; else loading"
+  titulo="Servicios recomendados"
+  regla="destacados"
+  [portal]="token"
+  limite="{{ limite }}"
+></panel-productos-sugerido> -->
+
+<app-panel
+  *ngIf="portal; else loading"
+  [titulo]="titulo"
+  [regla]="regla"
+  [portal]="portal"
+  [limite]="limite"
+></app-panel>
+
+<ng-template #loading>
+  <h2>Cargando...</h2>
+</ng-template>

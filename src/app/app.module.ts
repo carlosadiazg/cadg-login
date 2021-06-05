@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { APP_ROUTING } from './app.routes';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -10,6 +10,10 @@ import { LoginComponent } from './components/login/login.component';
 import { PasswordRecoveryComponent } from './components/password-recovery/password-recovery.component';
 import { PasswordUpdateComponent } from './components/password-update/password-update.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { AlertsComponent } from './components/shared/alerts/alerts.component';
+import { ApiService } from './services/api.service';
+import { MicrositeComponent } from './components/microsite/microsite.component';
+import { PanelComponent } from './components/panel/panel.component';
 
 @NgModule({
 	declarations: [
@@ -18,10 +22,14 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 		LoginComponent,
 		PasswordRecoveryComponent,
 		PasswordUpdateComponent,
-		NavbarComponent
+		NavbarComponent,
+		AlertsComponent,
+		MicrositeComponent,
+		PanelComponent
 	],
-	imports: [ BrowserModule, AppRoutingModule, APP_ROUTING ],
-	providers: [],
-	bootstrap: [ AppComponent ]
+	imports: [ BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule ],
+	providers: [ ApiService ],
+	bootstrap: [ AppComponent ],
+	schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })
 export class AppModule {}
