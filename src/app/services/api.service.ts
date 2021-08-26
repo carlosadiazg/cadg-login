@@ -36,10 +36,10 @@ export class ApiService {
 		return response;
 	}
 
-	commonsVentas() {
+	commonsVentas(params: string) {
 		const headers = new HttpHeaders().set('token-external', 'gBPsYbxHaLbAb1Sj6DrM');
 
-		let url = 'https://dev-api-carrito.solucionesbolivar.com/api/products-sales/destacados/2';
+		let url = 'https://dev-api-carrito.solucionesbolivar.com/api/products-sales/' + params;
 		let response = this.http.get(url, { headers }).subscribe((data) => {
 			console.log(data['result']);
 		});

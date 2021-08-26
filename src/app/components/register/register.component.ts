@@ -25,6 +25,14 @@ export class RegisterComponent extends AlertsComponent implements OnInit {
 		});
 	}
 
+	onCaptchaExpired(event: any) {
+		console.log(event);
+	}
+
+	onCaptchaResponse(event: any) {
+		console.log(event);
+	}
+
 	submitForm() {
 		if (this.registerGroup.status == 'VALID') {
 			this.showLoading('Registrando información');

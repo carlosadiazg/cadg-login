@@ -5,12 +5,32 @@
     <title>TvLogin</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script>
+      jQuery(document).ready(function () {
+        alert("logintransversal works!");
+        localStorage.setItem("portal", "stgbolivarconmigo");
+        loginSystem.loadLogin();
+      });
+    </script>
     <script
       type="text/javascript"
       src="https://microsites-panel-productos-sugeridos-dev.s3.amazonaws.com/productos-sugeridos-es5.js"
     ></script>
+    <script src="https://stg.registro.solucionesbolivarsites.com/javascripts/basic-login-system-stg.js"></script>
   </head>
   <body>
     <app-root></app-root>
+    <!-- <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <div
+      id="g_id_onload"
+      data-client_id="352435358106-2dbgg55nq990k719euvkd2ge16ihc41v.apps.googleusercontent.com"
+      data-login_uri="http://localhost:4200/heroes"
+      data-callback="mostrarCallback"
+    ></div>
+    <script>
+      function mostrarCallback(response) {
+        console.log(response);
+      }
+    </script> -->
   </body>
 </html>

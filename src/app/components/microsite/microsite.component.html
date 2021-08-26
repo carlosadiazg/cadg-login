@@ -28,21 +28,26 @@
 </ng-container> -->
 
 <!-- <panel-productos-sugerido
-  *ngIf="token; else loading"
-  titulo="Servicios recomendados"
-  regla="destacados"
-  [portal]="token"
-  limite="{{ limite }}"
-></panel-productos-sugerido> -->
-
-<app-panel
   *ngIf="portal; else loading"
   [titulo]="titulo"
   [regla]="regla"
   [portal]="portal"
   [limite]="limite"
-></app-panel>
+  [param]="param"
+  [idcarrito]="idcarrito"
+></panel-productos-sugerido> -->
+
+<!-- <app-panel
+  *ngIf="portal; else loading"
+  [titulo]="titulo"
+  [regla]="regla"
+  [portal]="portal"
+  [limite]="limite"
+></app-panel> -->
 
 <ng-template #loading>
   <h2>Cargando...</h2>
 </ng-template>
+
+<div [innerHTML]="label"></div>
+<div [innerHTML]="detail"></div>

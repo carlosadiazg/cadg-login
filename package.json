@@ -20,6 +20,7 @@
     "@angular/platform-browser-dynamic": "~9.1.11",
     "@angular/router": "~9.1.11",
     "@popperjs/core": "^2.9.2",
+    "angular-recaptcha3": "^2.0.0",
     "animate.css": "^4.1.1",
     "bootstrap": "^5.0.0",
     "font-awesome": "^4.7.0",

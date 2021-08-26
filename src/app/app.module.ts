@@ -14,6 +14,8 @@ import { AlertsComponent } from './components/shared/alerts/alerts.component';
 import { ApiService } from './services/api.service';
 import { MicrositeComponent } from './components/microsite/microsite.component';
 import { PanelComponent } from './components/panel/panel.component';
+import { ReCaptchaModule } from 'angular-recaptcha3';
+import { LogintransversalComponent } from './components/logintransversal/logintransversal.component';
 
 @NgModule({
 	declarations: [
@@ -25,9 +27,25 @@ import { PanelComponent } from './components/panel/panel.component';
 		NavbarComponent,
 		AlertsComponent,
 		MicrositeComponent,
-		PanelComponent
+		PanelComponent,
+		LogintransversalComponent
 	],
-	imports: [ BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule ],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		FormsModule,
+		ReactiveFormsModule,
+		HttpClientModule,
+		ReCaptchaModule.forRoot({
+			invisible: {
+				sitekey: '6Leeln0bAAAAADt83I7SJh1mzpw9qneOJrvocHFP'
+			},
+			normal: {
+				sitekey: '6Leeln0bAAAAADt83I7SJh1mzpw9qneOJrvocHFP'
+			},
+			language: 'en'
+		})
+	],
 	providers: [ ApiService ],
 	bootstrap: [ AppComponent ],
 	schemas: [ CUSTOM_ELEMENTS_SCHEMA ]

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './components/login/login.component';
+import { LogintransversalComponent } from './components/logintransversal/logintransversal.component';
 import { MicrositeComponent } from './components/microsite/microsite.component';
 import { PasswordRecoveryComponent } from './components/password-recovery/password-recovery.component';
 import { PasswordUpdateComponent } from './components/password-update/password-update.component';
@@ -12,6 +13,7 @@ const routes: Routes = [
 	{ path: 'password-recovery', component: PasswordRecoveryComponent },
 	{ path: 'password-update', component: PasswordUpdateComponent },
 	{ path: 'microsite', component: MicrositeComponent },
+	{ path: 'login-tv', component: LogintransversalComponent },
 	{ path: '**', pathMatch: 'full', redirectTo: 'login' }
 ];
 

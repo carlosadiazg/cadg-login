@@ -62,3 +62,10 @@
     </button>
   </form>
 </div>
+
+<recaptcha
+  [size]="'normal'"
+  [hide]="false"
+  (captchaResponse)="onCaptchaResponse($event)"
+>
+</recaptcha>
